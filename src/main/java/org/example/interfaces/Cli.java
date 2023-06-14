@@ -2,6 +2,7 @@ package org.example.interfaces;
 
 import org.example.domain.PokemonWeightUseCase;
 import org.example.infrastructure.rest.pokeapi.Pokemon;
+import org.example.reposytory.Repository;
 import org.example.reposytory.Reposytory;
 
 import java.util.Scanner;
@@ -11,7 +12,8 @@ import java.util.Scanner;
 
 public class Cli {
 
-    Reposytory reposytory = new Reposytory();
+    Repository reposytory = new Reposytory();
+
     PokemonWeightUseCase weight = new PokemonWeightUseCase(reposytory);
     public void run() {
 
