@@ -7,7 +7,7 @@ import org.example.infrastructure.rest.pokeapi.Pokemon;
 import java.util.Locale;
 
 //pobranie wymaganych danych
-public class Reposytory {
+public class Reposytory implements Repository{
     public Pokemon getPokemon(String name){
         PokeApiV2 pokeApiV2 = PokeApiRestClient.getPokeApiV2();
         String pokemonResponse = null;

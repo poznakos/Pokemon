@@ -1,5 +1,6 @@
 package org.example.domain;
 
+import mock.RepositoryMock;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,8 @@ class PokemonWeightUseCaseTest {;
 
     @BeforeEach
     public void creatSUT() {
-//        sut = new PokemonWeightUseCase();
+        RepositoryMock repositoryMock = new RepositoryMock();
+        sut = new PokemonWeightUseCase(repositoryMock);
     }
 
     @Test
