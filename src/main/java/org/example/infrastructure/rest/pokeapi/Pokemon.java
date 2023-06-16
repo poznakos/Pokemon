@@ -36,6 +36,6 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return " name: " + name + " forms: " + forms ;
+        return "name: " + name;
     }
 }

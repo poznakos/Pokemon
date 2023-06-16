@@ -1,9 +1,9 @@
 package mock;
 
 import org.example.infrastructure.rest.pokeapi.Pokemon;
-import org.example.reposytory.Repository;
+import org.example.reposytory.IRepository;
 
-public class RepositoryMock implements Repository {
+public class IRepositoryMock implements IRepository {
 
     @Override
     public Pokemon getPokemon(String name) {

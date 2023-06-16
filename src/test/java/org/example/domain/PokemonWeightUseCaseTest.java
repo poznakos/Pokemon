@@ -1,6 +1,8 @@
 package org.example.domain;
 
-import mock.RepositoryMock;
+import mock.IRepositoryMock;
+import org.example.infrastructure.rest.pokeapi.Pokemon;
+import org.example.reposytory.IRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +14,12 @@ class PokemonWeightUseCaseTest {;
 
     @BeforeEach
     public void creatSUT() {
-        RepositoryMock repositoryMock = new RepositoryMock();
+        IRepository repositoryMock = new IRepositoryMock();
         sut = new PokemonWeightUseCase(repositoryMock);
     }
 
     @Test
     void process_1() {
-        assertEquals("abra Weight: 195", sut.process("Abra"));
+        assertEquals("test name Weight: 0", sut.process("xxx"));
     }
 }
