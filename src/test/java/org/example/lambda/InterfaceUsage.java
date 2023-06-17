@@ -51,12 +51,20 @@ public class InterfaceUsage {
 
         //Function<String,void> -> Consumer<String>
         Consumer<String> consumer1 = (consumerString) -> System.out.println(consumerString);
-        Consumer<String> consumer2 = consumerString -> System.out.println(consumerString);
+        Consumer<String> consumer2 = consumerString -> {
+            System.out.println(consumerString);
+            System.out.println(consumerString);
+        };
         consumer2.accept("Hello");
 
         //Function<void,String> -> Supplier<String>
         Supplier<String> supplier = () -> "Hello";
         String supplierResult = supplier.get();
+        Supplier<Object> newObjectSupplier = () -> new Object();
+        Object o1 = newObjectSupplier.get();
+//        Object o2 = newObjectSupplier.get();
+
+//        Runnable runnable = () -> {};
 
         //Function<String,Boolean> -> Predicate<String>
         Predicate<String> predicate = predicateString -> predicateString.isEmpty();

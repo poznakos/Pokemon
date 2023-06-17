@@ -1,6 +1,6 @@
 package org.example.optional;
 
-import org.example.infrastructure.rest.usersbooks.Users;
+//import org.example.infrastructure.rest.usersbooks.Users;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -18,15 +18,19 @@ public class OptionalsExampleUT {
             object.toString();
         }
 
+//        Optional<Users> usersOptionalEmpty = Optional.empty();
+//        Optional<Users> usersOptional = Optional.ofNullable(new Users());
+//
+//        usersOptional
+//                .map( users -> users.toString() )
+//                .map( userString -> userString.toLowerCase() )
+//                .filter( userStringLowerCase -> userStringLowerCase.length() < 3 )
+//                .orElse("To jest null");
 
-        Optional<Users> usersOptionalEmpty = Optional.empty();
-        Optional<Users> usersOptional = Optional.ofNullable(null);
-
-        usersOptional
-                .map( users -> users.toString() )
-                .map( userString -> userString.toLowerCase() )
-                .filter( userStringLowerCase -> userStringLowerCase.length() < 3 )
-                .orElse("To jest null");
+//                .orElseGet(() -> "");
+//                .ifPresent(System.out::println);
+//                .ifPresent(previousValue -> System.out.println(previousValue))
+//                ;
     }
 
 }

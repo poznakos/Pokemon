@@ -1,14 +1,15 @@
 package org.example.interfaces;
 
-import org.example.domain.UsersBooksService;
-
-import java.util.Scanner;
+import org.example.domain.UserWithBooksDetailed;
+import org.example.infrastructure.rest.usersbooks.UsersBooksServiceStreamOptimized;
+import org.example.infrastructure.rest.usersbooks.UsersBooksServiceTraditional;
 
 // warstawa widoku, pobieranie wyświetlanie danych userowi
 
 public class Cli {
 
-    private final UsersBooksService usersBooksService = new UsersBooksService();
+    private final UsersBooksServiceTraditional usersBooksServiceTraditional = new UsersBooksServiceTraditional();
+    private final UsersBooksServiceStreamOptimized usersBooksServiceStreamOptimized = new UsersBooksServiceStreamOptimized();
 
     public void run() {
 
@@ -16,7 +17,10 @@ public class Cli {
 //        System.out.println("Podaj imię pokemona");
 //        String name = scan.nextLine();
 
-        usersBooksService.getUserBooks(1);
+        UserWithBooksDetailed userBooksTraditional = usersBooksServiceTraditional.getUserBooks(1);
+        UserWithBooksDetailed userBooksStream = usersBooksServiceStreamOptimized.getUserBooks(1);
+
+        userBooksTraditional.toString();
 
     }
 

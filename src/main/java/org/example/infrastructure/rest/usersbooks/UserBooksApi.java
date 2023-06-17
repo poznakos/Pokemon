@@ -5,7 +5,10 @@ import feign.RequestLine;
 
 public interface UserBooksApi {
 
-    @RequestLine("GET /pokemon/{pokemonName}")
-    String getPokemon(@Param("pokemonName") String pokemonName);
+    @RequestLine("GET /users/{userId}")
+    String getUser(@Param("userId") int userId);
+
+    @RequestLine("GET /books/{bookId}")
+    String getBook(@Param("bookId") int bookId);
 
 }
