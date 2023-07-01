@@ -14,11 +14,14 @@ public class Cli {
     public void run() {
 
 //        Scanner scan = new Scanner(System.in);
-//        System.out.println("Podaj imię pokemona");
-//        String name = scan.nextLine();
+//        System.out.println("Podaj identyfikator użytkownika");
+//        int id = scan.nextLine();
 
+//        UserWithBooksDetailed userBooksTraditional = usersBooksServiceTraditional.getUserBooks(id);
         UserWithBooksDetailed userBooksTraditional = usersBooksServiceTraditional.getUserBooks(1);
-        UserWithBooksDetailed userBooksStream = usersBooksServiceStreamOptimized.getUserBooks(1);
+//        UserWithBooksDetailed userBooksStream = usersBooksServiceStreamOptimized.getUserBooks(1);
+
+//        System.out.println(userBooksTraditional.toString());
 
         userBooksTraditional.toString();
 

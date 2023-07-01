@@ -12,6 +12,9 @@ public class InterfaceUsage {
 
         /* Old attitude */
         SomeClass someClass = new SomeClass();
+        SomeParentClass someParentClass = new SomeClass();
+        SomeInterface someInterface = new SomeClass();
+
         toUseMethod(someClass);
 
         /* Anonymous class */

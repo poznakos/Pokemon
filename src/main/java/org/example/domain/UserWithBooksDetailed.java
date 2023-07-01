@@ -1,12 +1,12 @@
 package org.example.domain;
 
 import lombok.Builder;
+import org.example.infrastructure.rest.usersbooks.models.UserWithBooksPreview;
 
 import java.util.List;
 
 @Builder
 public class UserWithBooksDetailed {
-
     private String id;
     private String name;
     private String surname;

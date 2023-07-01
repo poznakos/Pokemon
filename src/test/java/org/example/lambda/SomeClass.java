@@ -1,6 +1,6 @@
 package org.example.lambda;
 
-class SomeClass implements SomeInterface, SomeOtherInterface{
+class SomeClass extends SomeParentClass implements SomeInterface, SomeOtherInterface{
 
     public String newMethod(){
         return "newMethod";
