@@ -1,6 +1,7 @@
 package org.example.infrastructure.rest.usersbooks;
 
 import com.google.gson.Gson;
+import lombok.RequiredArgsConstructor;
 import org.example.domain.UserWithBooksDetailed;
 import org.example.infrastructure.rest.usersbooks.models.BookDetailedFromMicroservice;
 import org.example.infrastructure.rest.usersbooks.models.UserWithBooksPreview;
@@ -9,9 +10,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 public class UsersBooksServiceStreamOptimized {
 
-    private final UserBooksApi restClient = UsersBooksApiRestClient.getUsersBooks();
+    private final UserBooksApi restClient;
 
     public UserWithBooksDetailed getUserBooks(int userId) {
         return Optional.of(getUserWithBookPreview(userId))
