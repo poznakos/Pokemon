@@ -19,12 +19,12 @@ public class UserBooksApiMock implements UserBooksApi {
 
     @Override
     public String getUser(int userId) {
-        return ResourceLoader.getResourceAsString("users-0_200.json");
+        return ResourceLoader.getResourceAsString("stubs/users-0_200.json");
     }
 
     @Override
     public String getBook(int bookId) {
-        return ResourceLoader.getResourceAsString("books-" + bookId + "_200.json");
+        return ResourceLoader.getResourceAsString("stubs/books-" + bookId + "_200.json");
     }
 
 

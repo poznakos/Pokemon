@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class CliInterface extends AppInterface {
 
+    public static final String CLI_QUESTION = "Podaj identyfikator użytkownika";
+
     Scanner scanner = new Scanner(System.in);
 
     public String getInput() {
-        System.out.println("Podaj identyfikator użytkownika");
+        System.out.println(CLI_QUESTION);
         return scanner.nextLine();
     }
 

@@ -1,6 +1,7 @@
 package org.example.infrastructure.rest.usersbooks;
 
 import com.google.gson.Gson;
+import lombok.RequiredArgsConstructor;
 import org.example.domain.UserWithBooksDetailed;
 import org.example.infrastructure.rest.usersbooks.models.BookDetailedFromMicroservice;
 import org.example.infrastructure.rest.usersbooks.models.UserWithBooksPreview;
@@ -8,9 +9,10 @@ import org.example.infrastructure.rest.usersbooks.models.UserWithBooksPreview;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequiredArgsConstructor
 public class UsersBooksServiceTraditional {
 
-    private final UserBooksApi restClient = UsersBooksApiRestClient.getUsersBooks();
+    private final UserBooksApi restClient;
 
     public UserWithBooksDetailed getUserBooks(int userId) {
         // Pobranie użytkownika

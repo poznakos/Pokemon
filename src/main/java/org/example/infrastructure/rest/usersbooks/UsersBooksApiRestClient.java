@@ -5,11 +5,11 @@ import feign.codec.StringDecoder;
 
 public class UsersBooksApiRestClient {
 
-    public static UserBooksApi getUsersBooks(){
+    public static UserBooksApi getUsersBooks(String usersBooksUrl){
         return Feign.builder()
 //                .decoder(new GsonDecoder())
                 .decoder(new StringDecoder())
-                .target(UserBooksApi.class, "http://localhost:8089");
+                .target(UserBooksApi.class, usersBooksUrl);
     }
 
 }

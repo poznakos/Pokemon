@@ -10,11 +10,12 @@ import org.example.interfaces.AppInterface;
 
 public class AppRunner implements Runner {
 
-    private final UsersBooksServiceTraditional usersBooksServiceTraditional = new UsersBooksServiceTraditional();
+    private final UsersBooksServiceTraditional usersBooksServiceTraditional;
     private final UsersBooksServiceStreamOptimized usersBooksServiceStreamOptimized;
 
     public AppRunner(UserBooksApi userBooksApi) {
         this.usersBooksServiceStreamOptimized = new UsersBooksServiceStreamOptimized(userBooksApi);
+        this.usersBooksServiceTraditional = new UsersBooksServiceTraditional(userBooksApi);
     }
 
     @Override
@@ -22,11 +23,11 @@ public class AppRunner implements Runner {
         Integer id = Integer.valueOf(appInterface.getInput());
 
 //        UserWithBooksDetailed userBooksTraditional = usersBooksServiceTraditional.getUserBooks(id);
-        UserWithBooksDetailed userBooksStream = usersBooksServiceStreamOptimized.getUserBooks(id);
+        UserWithBooksDetailed userWithBooksDetailed = usersBooksServiceStreamOptimized.getUserBooks(id);
 
-        String result = new GsonBuilder().setPrettyPrinting().create().toJson(userBooksStream);
-        appInterface.setResult(id, result);
+//        String result = new GsonBuilder().setPrettyPrinting().create().toJson(userBooksStream);
+        appInterface.setResult(id, userWithBooksDetailed);
 
-        System.out.println(result);
+        System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(userWithBooksDetailed));
     }
 }
