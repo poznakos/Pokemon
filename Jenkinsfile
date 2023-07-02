@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Define JAVA') {
             steps {
-                sh './setjava.sh'
+                sh './setjava'
             }
         }
         stage('Build - compile') {
