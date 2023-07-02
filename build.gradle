@@ -22,6 +22,26 @@ dependencies {
     testImplementation("com.github.tomakehurst:wiremock-jre8:2.35.0")
 }
 
-tasks.test {
-    useJUnitPlatform()
+test {
+    useJUnitPlatform(){
+
+    }
 }
+
+//task unitTests(type: Test) {
+//    useJUnitPlatform {
+//        includeTags 'UT'
+//    }
+//}
+//
+//task functionalTests(type: Test) {
+//    useJUnitPlatform {
+//        includeTags 'FT'
+//    }
+//}
+
+//tasks.named("unitTests"){
+//    useJUnitPlatform {
+//        includeTags 'UT'
+//    }
+//}

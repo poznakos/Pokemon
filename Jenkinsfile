@@ -2,15 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build - compile') {
+        stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Compile..'
                 sh './gradlew clean build -x test'
             }
         }
-        stage('Test') {
+        stage('Unit Tests') {
             steps {
-                echo 'Testing..'
+                echo 'Unit testing..'
+                sh "./gradlew test --tests '*UT' -i"
+            }
+        }
+        stage('Functional Tests') {
+            steps {
+                echo 'Functional testing..'
+                sh "./gradlew test --tests '*FT' -i"
             }
         }
         stage('Deploy') {
