@@ -2,7 +2,11 @@ pipeline {
     agent any
 
     stages {
-
+        stage('Define JAVA') {
+            steps {
+                sh './setjava'
+            }
+        }
         stage('Build - compile') {
             steps {
                 echo 'Building..'
