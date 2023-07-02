@@ -2,15 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Define JAVA') {
-            steps {
-                sh 'chmod 777 ./setjava'
-                sh './setjava'
-            }
-        }
         stage('Build - compile') {
             steps {
                 echo 'Building..'
+                sh 'chmod 777 ./setjava | ./setjava'
                 sh './gradlew clean build -x test'
             }
         }
