@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Define JAVA') {
             steps {
+                sh 'chmod 777 ./setjava'
                 sh './setjava'
             }
         }
